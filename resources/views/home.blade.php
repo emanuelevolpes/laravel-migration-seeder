@@ -10,6 +10,13 @@
 
 <body>
     <div class="container">
+        <ul>
+            @foreach ($trains as $train)
+            <li>Company: {{ $train->company }}</li>
+            <li>Departure time: {{ $train->departure_time}}</li>
+            <li>Arrival time: {{ $train->arrival_time}}</li>
+            @endforeach
+        </ul>
     </div>
 </body>
 
