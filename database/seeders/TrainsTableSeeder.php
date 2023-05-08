@@ -21,16 +21,16 @@ class TrainsTableSeeder extends Seeder
     {
         for ($i = 0; $i < 20; $i++) {
             $newTrain = new Train();
-            $newTrain->id = $faker->uuid();
             $newTrain->company = $faker->word();
             $newTrain->departure_station = $faker->word();
             $newTrain->arrival_station = $faker->word();
             $newTrain->departure_time = $faker->dateTime();
             $newTrain->arrival_time = $faker->dateTime();
             $newTrain->train_code = $faker->randomNumber(6);
-            $newTrain->train_carriage = $faker->randomNumber(6);
+            $newTrain->train_carriage = $faker->randomNumber(4);
             $newTrain->on_time = $faker->numberBetween(0, 1);
             $newTrain->deleted = $faker->numberBetween(0, 1);
+            $newTrain->save();
         }
     }
 }
